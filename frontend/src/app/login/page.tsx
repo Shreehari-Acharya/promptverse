@@ -3,7 +3,7 @@ import { BackgroundLines } from "@/components/ui/background-lines";
 
 export default function LoginPage() {
   return (
-    <div className="flex md:flex-row min-h-screen w-full justify-center items-center ">
+    <div className="flex md:flex-row min-h-screen w-full justify-center items-center gap-10 ">
 
         <LoginForm />
       <div className="w-full md:w-1/2 max-w-xl relative flex items-center justify-center">
