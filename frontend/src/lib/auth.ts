@@ -15,9 +15,18 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
 
   pages: {
     signIn: "/login",
+    verifyRequest: "/login/verify-request",
+    error: "/login/error",
+    newUser: "/onboarding", 
   },
 
   session: {
     strategy: "jwt",
+  },
+
+  callbacks: {
+    authorized: async ({ auth }) => {
+      return !!auth
+    }
   },
 })

@@ -7,10 +7,14 @@ import {
   GradientBorderBtn2,
 } from "@/components/ui/custom-btns";
 import { FlipWords } from "@/components/ui/flip-words";
+import { useRouter } from "next/navigation";
 
 const words = ["find", "create", "share", "test"];
 
 export default function Home() {
+
+  const router = useRouter();
+
   return (
     <div className="relative flex flex-col min-h-screen
           md:px-8 
@@ -48,8 +52,8 @@ export default function Home() {
 
         {/* Buttons */}
         <div className="mt-4 flex flex-col sm:flex-row gap-4">
-          <GradientBorderBtn text="Explore Prompts" />
-          <GradientBorderBtn2 text="Join now" />
+          <GradientBorderBtn text="Explore Prompts" onClick={()=> {router.push("/login")}} />
+          <GradientBorderBtn2 text="Join now" onClick={()=> {router.push("/login")}} />
         </div>
       </div>
 
