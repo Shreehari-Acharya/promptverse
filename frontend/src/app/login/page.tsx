@@ -1,7 +1,15 @@
 import LoginForm from "@/components/login-form";
 import { BackgroundLines } from "@/components/ui/background-lines";
+import { auth } from "@/lib/auth";
+import { redirect } from "next/navigation";
 
-export default function LoginPage() {
+export default async function LoginPage() {
+  const session = await auth();
+
+  if(session?.user) {
+    redirect("/explore");
+  }
+
   return (
     <div className="flex md:flex-row min-h-screen w-full justify-center items-center gap-10 ">
 
