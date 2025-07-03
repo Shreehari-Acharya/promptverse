@@ -1,5 +1,5 @@
-import LoginForm from "@/components/login-form";
-import { BackgroundLines } from "@/components/ui/background-lines";
+import LoginForm from "./components/login-form";
+import { BackgroundLines } from "@ui/background-lines";
 import { auth } from "@/lib/auth";
 import { redirect } from "next/navigation";
 

@@ -1,12 +1,12 @@
 "use client";
 import ImageCarousel from "@/components/image-carousel";
 import Navbar from "@/components/navbar";
-import { BackgroundBeams } from "@/components/ui/background-beams";
+import { BackgroundBeams } from "@ui/background-beams";
 import {
   GradientBorderBtn,
   GradientBorderBtn2,
 } from "@/components/ui/custom-btns";
-import { FlipWords } from "@/components/ui/flip-words";
+import { FlipWords } from "@ui/flip-words";
 import { useRouter } from "next/navigation";
 
 const words = ["find", "create", "share", "test"];
