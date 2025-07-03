@@ -18,7 +18,7 @@ export default function Home() {
   return (
     <div className="relative flex flex-col min-h-screen
           md:px-8 
-          lg:flex-row lg:p-10">
+          lg:flex-row lg:p-10 lg:px-30 ">
       <Navbar />
 
       {/* Left Section */}
@@ -58,7 +58,7 @@ export default function Home() {
       </div>
 
       {/* Right Section (Carousel) */}
-      <div className="w-full lg:w-5/12 flex items-center justify-center">
+      <div className="w-full lg:w-5/12 flex items-center justify-end">
         <div className="w-full max-w-md px-4">
           <ImageCarousel />
         </div>

@@ -10,23 +10,19 @@ import type { CarouselApi } from "@/components/ui/carousel";
 
 const slideData = [
   {
-    title: "Mystic Mountains",
-    button: "Explore Component",
+    title: "Anime style characters",
     src: "/sample-1.webp",
   },
   {
-    title: "Urban Dreams",
-    button: "Explore Component",
+    title: "cool animals in solid colors",
     src: "/sample-2.webp",
   },
   {
-    title: "Neon Nights",
-    button: "Explore Component",
+    title: "pop art celebrities",
     src: "/sample-3.webp",
   },
   {
-    title: "Desert Whispers",
-    button: "Explore Component",
+    title: "futuristic beings",
     src: "/sample-4.webp",
   },
 ];
@@ -54,14 +50,17 @@ export default function AnimatedCarousel() {
     >
       <CarouselContent>
         {slideData.map((slide, index) => (
-          <CarouselItem key={index} className="flex justify-center">
+          <CarouselItem key={index} className="flex flex-col items-center gap-2 text-center">
             <Image
               src={slide.src}
               alt={slide.title}
               width={350}
               height={450}
-              className="h-[450] w-[350] object-cover rounded-lg transition-all duration-700 ease-in-out"
+              className="rounded-lg object-cover"
             />
+            <p className="text-xl pt-4 md:text-3xl font-medium">
+              {slide.title}
+            </p>
           </CarouselItem>
         ))}
       </CarouselContent>
