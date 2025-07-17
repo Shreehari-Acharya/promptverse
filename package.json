@@ -1,0 +1,16 @@
+{
+  "name": "promptverse",
+  "private": true,
+  "version": "1.0.0",
+  "dependencies": {},
+  "devDependencies": {},
+  "workspaces": [
+    "frontend",
+    "backend",
+    "shared"
+  ],
+  "scripts": {
+    "dev:frontend": "pnpm --filter frontend dev"
+  },
+  "packageManager": "pnpm@10.13.1"
+}

@@ -1,0 +1,16 @@
+services:
+    dev-services:
+      image: postgres:latest
+      container_name: promptverse-db
+      environment:
+        POSTGRES_USER: promptverse
+        POSTGRES_PASSWORD: promptverse
+        POSTGRES_DB: promptverse_db
+      ports:
+        - "5432:5432"
+      volumes:
+        - promptverse-db-data:/var/lib/postgresql/data
+
+volumes:
+    promptverse-db-data:
+      driver: local
