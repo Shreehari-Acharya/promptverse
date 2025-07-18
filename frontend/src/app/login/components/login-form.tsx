@@ -5,16 +5,17 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input"
 import { Separator } from "@/components/ui/separator"
 import { IconBrandGoogle, IconBrandGithub, IconBrandX, IconMail } from "@tabler/icons-react"
-import { signIn } from "next-auth/react"
+import { signIn } from "@/lib/auth-client"
 
 export default function LoginForm() {
   const handleSocialLogin = (provider: string) => {
-    signIn(provider)
+    console.log(`Redirecting to ${provider} login...`)
+    signIn.social({provider: provider})
   }
 
   const handleMagicLink = (formData: FormData) => {
     const email = formData.get("email") as string
-    signIn("resend", { email })
+    signIn.magicLink({email: email, callbackURL: "/onboarding"})
   }
 
   return (

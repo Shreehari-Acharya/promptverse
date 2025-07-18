@@ -1,10 +1,12 @@
+"use client";
 import LoginForm from "./components/login-form";
 import { BackgroundLines } from "@ui/background-lines";
-import { auth } from "@/lib/auth";
+import { useSession } from "@/lib/auth-client";
 import { redirect } from "next/navigation";
 
-export default async function LoginPage() {
-  const session = await auth();
+export default function LoginPage() {
+  const {data: session} = useSession();
+
 
   if(session?.user) {
     redirect("/explore");

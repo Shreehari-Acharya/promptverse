@@ -10,6 +10,8 @@
     "shared"
   ],
   "scripts": {
+    "dev": "pnpm dev:backend && pnpm dev:frontend",
+    "dev:backend": "pnpm --filter backend start:dev",
     "dev:frontend": "pnpm --filter frontend dev"
   },
   "packageManager": "pnpm@10.13.1"

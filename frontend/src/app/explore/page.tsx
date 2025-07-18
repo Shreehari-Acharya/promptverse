@@ -1,7 +1,7 @@
-import { auth } from "@/lib/auth";
+
 
 export default async function ExplorePage() {
-    const session = await auth();
+
   return (
     <main className="min-h-screen flex flex-col items-center justify-center text-center px-4">
       <div className="max-w-md space-y-6">
@@ -12,7 +12,6 @@ export default async function ExplorePage() {
         <div>
             User details 
             <pre className="text-left p-4 rounded-lg">
-                {JSON.stringify(session?.user, null, 2)}
             </pre>
         </div>
       </div>

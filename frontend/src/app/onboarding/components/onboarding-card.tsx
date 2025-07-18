@@ -12,15 +12,15 @@ import { Label } from "@ui/label";
 import { Badge } from "@ui/badge";
 import { Alert, AlertDescription } from "@ui/alert";
 import { Check, X, Loader2 } from "lucide-react";
-import { Session } from "next-auth";
+import { User } from "better-auth/types";
 import { useState } from "react";
 import Logo from "@ui/logo";
 
 type OnboardingCardProps = {
-  session: Session;
+  user: User;
 };
 
-export default function OnboardingCard({ session }: OnboardingCardProps) {
+export default function OnboardingCard({ user }: OnboardingCardProps) {
 
   const [usernameStatus, setUsernameStatus] = useState<
     "idle" | "checking" | "available" | "taken"
@@ -45,7 +45,7 @@ export default function OnboardingCard({ session }: OnboardingCardProps) {
     // Submit logic here
   };
 
-  const authMethod = session.user?.name ? "social" : "magic-link";
+  const authMethod = user.name ? "social" : "magic-link";
 
   const isFormValid =
     formData.username.length >= 3 &&

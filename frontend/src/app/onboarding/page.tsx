@@ -1,9 +1,13 @@
-import { auth } from "@/lib/auth";
+import { useSession } from "@/lib/auth-client";
 import OnboardingCard from "./components/onboarding-card";
 import { DotBackground } from "@ui/dotted-background";
 
 export default async function OnboardingPage() {
-  const session = await auth();
+  const {data: session, isPending} = useSession();
+
+  if(isPending) {
+    return ( null );
+  }
 
   if (!session?.user) {
     return (
@@ -15,7 +19,7 @@ export default async function OnboardingPage() {
 
   return (
       <DotBackground children={
-        <OnboardingCard session={session}  />
+        <OnboardingCard user={session.user}  />
       } />
   );
 }
